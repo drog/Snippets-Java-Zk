@@ -36,6 +36,7 @@ private static List<Component> searchAllComponentsInChildren(Class<?> zclass, Co
 
 # [Clausula In mayor a 1000 elementos en Oracle](https://stackoverflow.com/questions/19002792/why-oracle-in-clause-has-limit-of-1000-only-for-static-data)
 ```java
+public static final Integer ORACLE_MAX_VALUES_SUPPORTED_IN_CLAUSE = 1000;
 
 public static <T> List<List<T>> chopped( List<T> list, final int max ) {
 		List<List<T>> parts = new ArrayList<List<T>>();

@@ -61,6 +61,20 @@ public static <T> List<List<T>> chopped( List<T> list, final int max ) {
 }
 ```
 
+# Creacion Componentes
+
+```html
+<listcell onCreate="win$composer.createlistCellCmbBox(self);" />
+```
+
+```java
+public final void createlistCelldblBox(final Listcell listCell) {
+	final EhCOSDoublebox dblBox = new EhCOSDoublebox();
+	dblBox.setParent(listCell);
+
+}
+
+```
 
 # Propiedades Tomcat
 

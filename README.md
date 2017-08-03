@@ -59,11 +59,11 @@ public static <T> List<List<T>> chopped( List<T> list, final int max ) {
 		}
 		return query;
 	}
-```java
+```
 
 
 # Propiedades Tomcat
 
 ```
 -Dprops.path="C:\properties" -Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m -XX:+UseParallelGC -XX:+CMSClassUnloadingEnabled -Ddb.type=postgres
-```java
+```

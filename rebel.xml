@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application generated-by="eclipse" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://update.zeroturnaround.com/jrebel/rebel-2_1.xsd">
+
+	<classpath>
+		<dirset dir="C:/ehCOS/eHCSIREN5.1PROD">
+			<include name="ehCSProject/ehCSProject-ui/target/classes"/>
+			<include name="ehCSProject/ehCSProject-server/target/classes"/>
+			<include name="ehCSProduct/ehCS-ui/target/classes"/>
+			<include name="ehCSProduct/ehCS-server/target/classes"/>
+			<include name="ehFinancial-parent/ehFinancial-ui/target/classes"/>
+			<include name="ehFinancial-parent/ehFinancial-server/target/classes"/>
+		</dirset>
+	</classpath>
+
+	<web>
+		<link target="/">
+			<dir name="C:/ehCOS/eHCSIREN5.1PROD/ehCSProject/ehCSProject-ui/target/m2e-wtp/web-resources">
+				<exclude name="/"/>
+			</dir>
+		</link>
+		<link target="/">
+			<dirset dir="C:/ehCOS/eHCSIREN5.1PROD">
+			<include name="ehCSProject/ehCSProject-ui/src/main/webapp"/>
+			<include name="ehFinancial-parent/ehFinancial-ui/src/main/resources/web"/>
+		</dirset>
+		</link>
+	</web>
+
+</application>

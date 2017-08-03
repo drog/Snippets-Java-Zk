@@ -71,7 +71,18 @@ public static <T> List<List<T>> chopped( List<T> list, final int max ) {
 public final void createlistCelldblBox(final Listcell listCell) {
 	final EhCOSDoublebox dblBox = new EhCOSDoublebox();
 	dblBox.setParent(listCell);
+	dblBox.addEventListener(ON_CHANGE, dblBoxEventListener(dblBox));
+}
 
+private EventListener dblBoxEventListener(final EhCOSDoublebox dblBox) {
+	return new EventListener() {
+		@Override
+		public void onEvent(Event event) throws Exception {
+			Listitem itemSelcted = (Listitem) event.getTarget().getParent().getParent();
+			Object object = (Object) itemSelcted.getValue();
+
+		}
+	};
 }
 
 ```

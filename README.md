@@ -3,15 +3,15 @@
 
 ```java
 public static Component findComponentInParent(Class<?> zclass, Component component) {
-		if(component!=null && component.getParent()!=null){
-			if(zclass.isInstance(component.getParent())){
-				return component.getParent();
-			}else{
-				return findComponentInParent(zclass, component.getParent());
-				}
+	if(component!=null && component.getParent()!=null){
+		if(zclass.isInstance(component.getParent())){
+			return component.getParent();
+		}else{
+			return findComponentInParent(zclass, component.getParent());
 			}
-		return null;
-	}
+		}
+	return null;
+}
 	
 public static List<Component> searchAllComponentsInChildren(Class<?> zclass, Component component){
   List<Component> listComponents = new ArrayList<Component>();
@@ -39,26 +39,26 @@ private static List<Component> searchAllComponentsInChildren(Class<?> zclass, Co
 public static final Integer ORACLE_MAX_VALUES_SUPPORTED_IN_CLAUSE = 1000;
 
 public static <T> List<List<T>> chopped( List<T> list, final int max ) {
-		List<List<T>> parts = new ArrayList<List<T>>();
-		final int total = list.size();
-		for ( int i = 0; i < total; i += max ) {
-			parts.add( new ArrayList<T>( list.subList( i, Math.min( total, i + max ) ) ) );
-		}
-		return parts;
+	List<List<T>> parts = new ArrayList<List<T>>();
+	final int total = list.size();
+	for ( int i = 0; i < total; i += max ) {
+		parts.add( new ArrayList<T>( list.subList( i, Math.min( total, i + max ) ) ) );
 	}
+	return parts;
+}
   
 @SuppressWarnings ( "rawtypes" )
 	public static <E extends Comparable> JPAQuery divideListNotIn( JPAQuery query, List<E> listaIds, ComparableExpressionBase<E> path, Integer max ) {
-		if ( listaIds != null ) {
-			List<List<E>> parts = chopped( listaIds, max );
-			BooleanExpression criteria = null;
-			for ( List<E> pp : parts ) {
-				criteria = criteria == null ? path.notIn( pp ) : criteria.or( path.notIn( pp ) );
-			}
-			query.where( criteria );
+	if ( listaIds != null ) {
+		List<List<E>> parts = chopped( listaIds, max );
+		BooleanExpression criteria = null;
+		for ( List<E> pp : parts ) {
+			criteria = criteria == null ? path.notIn( pp ) : criteria.or( path.notIn( pp ) );
 		}
-		return query;
+		query.where( criteria );
 	}
+	return query;
+}
 ```
 
 
@@ -67,3 +67,7 @@ public static <T> List<List<T>> chopped( List<T> list, final int max ) {
 ```
 -Dprops.path="C:\properties" -Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m -XX:+UseParallelGC -XX:+CMSClassUnloadingEnabled -Ddb.type=postgres
 ```
+Garbage Collector : [UseParallelGC](https://stackoverflow.com/questions/2101518/difference-between-xxuseparallelgc-and-xxuseparnewgc)
+
+Class Unloading : [CMSClassUnloadingEnabled](https://stackoverflow.com/questions/3334911/what-does-jvm-flag-cmsclassunloadingenabled-actually-do)
+

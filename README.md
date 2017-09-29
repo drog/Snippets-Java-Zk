@@ -90,7 +90,7 @@ private EventListener dblBoxEventListener(final EhCOSDoublebox dblBox) {
 # Propiedades Tomcat
 
 ```
--Dprops.path="C:\properties" -Xms2048m -Xmx2048m -XX:PermSize=2048m -XX:MaxPermSize=2048m -XX:+UseParallelGC -XX:+CMSClassUnloadingEnabled -Ddb.type=postgres
+-Dprops.path="C:\properties" -Xms4096m -Xmx4096m -XX:PermSize=4096m -XX:MaxPermSize=4096m -XX:+UseParallelGC -XX:+CMSClassUnloadingEnabled -XX:-UseGCOverheadLimit -Ddb.type=postgres
 ```
 Garbage Collector : [UseParallelGC](https://stackoverflow.com/questions/2101518/difference-between-xxuseparallelgc-and-xxuseparnewgc)
 

@@ -87,6 +87,16 @@ private EventListener dblBoxEventListener(final EhCOSDoublebox dblBox) {
 
 ```
 
+# Ocultar iconos Worklist
+
+```java
+public static void removeInfoWorkList(EhCOSWorkList wrklist) throws IllegalAccessException {
+    ((EhCOSLabel)FieldUtils.readField(wrklist, "labelText", true)).setVisible(false);
+    ((EhCOSImage)FieldUtils.readField(wrklist, "dbImageRefresh", true)).setVisible(false);
+  }
+
+```
+
 # Propiedades Tomcat
 
 ```

@@ -106,3 +106,7 @@ Garbage Collector : [UseParallelGC](https://stackoverflow.com/questions/2101518/
 
 Class Unloading : [CMSClassUnloadingEnabled](https://stackoverflow.com/questions/3334911/what-does-jvm-flag-cmsclassunloadingenabled-actually-do)
 
+# Salto de linea en MessageBoxs, etc.
+```java
+System.getProperty("line.separator")
+```
